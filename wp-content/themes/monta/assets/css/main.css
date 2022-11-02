@@ -609,10 +609,20 @@ header .mobile-toggle img {
 }
 
 /* Gallery Section */
+.gallery-section {
+	position: relative;
+}
 .gallery-section .carousel-control-next-icon,
 .gallery-section .carousel-control-prev-icon {
 	width: 10rem;
 	height: 10rem;
+}
+.gallery-section .zoom-icon {
+	width: 4rem;
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	margin-left: -2rem;
 }
 
 /* Product Section */

@@ -220,6 +220,7 @@ get_header(); ?>
          <span class="visually-hidden">Next</span>
       </button>
    </div>
+   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/zoom.png" class="zoom-icon d-md-none" alt="">
 </section>
 <!-- Gallery Section End -->
 
