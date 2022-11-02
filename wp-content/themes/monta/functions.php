@@ -314,10 +314,46 @@ add_action('wp_enqueue_scripts', 'monta_files');
 /**
  * TGM Plugin Activator
  */
-// if (!class_exists('TGM_Plugin_Activation')) {
-//    include_once('inc/tgm-plugin-activation.php');
-//    include_once('inc/required-plugins.php');
-// }
+if (!class_exists('TGM_Plugin_Activation')) {
+   include_once('inc/tgm-plugin-activation.php');
+   include_once('inc/required-plugins.php');
+}
+
+/**
+ * ACF Options
+ */
+if (class_exists('ACF')) {
+   include_once('inc/acf/acf-option.php');
+}
+
+// ACF Jason Save
+add_filter('acf/settings/save_json', 'monta_acf_json_save_point');
+function monta_acf_json_save_point($path) {
+
+   // update path
+   $path = get_stylesheet_directory() . '/inc/acf/acf-jason';
+
+
+   // return
+   return $path;
+}
+
+
+// ACF Jason Load
+add_filter('acf/settings/load_json', 'monta_acf_json_load_point');
+function monta_acf_json_load_point($paths) {
+
+   // remove original path (optional)
+   unset($paths[0]);
+
+
+   // append path
+   $paths[] = get_stylesheet_directory() . '/inc/acf/acf-jason';
+
+
+   // return
+   return $paths;
+}
 
 
 /**
