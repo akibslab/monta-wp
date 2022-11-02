@@ -42,6 +42,16 @@
 				});
 
 				$(".product-section .item-4").insertBefore(".product-section .item-3");
+
+				$('.intro-section .intro-item .image-mobile').on('click', function(){
+					$(this).next('.text-box').show();
+					$(this).hide();
+				});
+
+				$('.intro-section .intro-item .text-box').on('click', function(){
+					$(this).prev('.image-mobile').show();
+					$(this).hide();
+				});
 			}
 		}
 
