@@ -278,6 +278,15 @@
 	.intro-section .intro-item {
 		margin-bottom: 20px;
 		text-align: center;
+		min-height: 380px;
+		max-width: 350px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
 	}
 
 	.intro-section .intro-box .col-md-4 .intro-item:nth-child(2) {
@@ -290,8 +299,7 @@
 		margin: -40px auto 0;
 	}
 
-	.intro-section .intro-item p,
-	.intro-section .intro-item a.link {
+	.intro-section .intro-item .text-box {
 		display: none;
 	}
 

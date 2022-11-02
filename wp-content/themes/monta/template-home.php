@@ -124,27 +124,31 @@ get_header(); ?>
       <div class="intro-box">
          <div class="row">
             <div class="col-md-4">
-               <div class="intro-item">
-                  <div class="image-mobile d-md-none">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-1.png" alt="">
+               <div class="intro-item item-1">
+                  <div class="image-mobile">
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-1.png" class="d-md-none"  alt="">
+                     <h4 class="heading-4">Tubo que você precisa para montar</h4>
                   </div>
-                  <h4 class="heading-4">Tubo que você precisa para montar</h4>
-                  <p>Dentro de cada tubo, tudo o que você precisa para montar o móvel. Projeto de furação para colocar sobre cada peça de madeira com a posição de cada furo. As tampas se juntam e formam um gabarito que garantirá furos perfeitos e precisos. Cavilhas, parafusos, minifix,...já incluídos você só precisará dos itens que não fazem parte do móvel como parafusadeira com broca 8mm, chave alen 6 e pouco mais. A partir daqui, falta escolher as chapas</p>
-                  <a href="#" class="link">Catálogo <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  <div class="text-box">
+                     <p>Dentro de cada tubo, tudo o que você precisa para montar o móvel. Projeto de furação para colocar sobre cada peça de madeira com a posição de cada furo. As tampas se juntam e formam um gabarito que garantirá furos perfeitos e precisos. Cavilhas, parafusos, minifix,...já incluídos você só precisará dos itens que não fazem parte do móvel como parafusadeira com broca 8mm, chave alen 6 e pouco mais. A partir daqui, falta escolher as chapas</p>
+                     <a href="#" class="link">Catálogo <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  </div>
                </div>
             </div>
 
             <div class="col-md-4">
-               <div class="intro-item">
-                  <div class="image-mobile d-md-none">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-2.png" alt="">
+               <div class="intro-item item-2">
+                  <div class="image-mobile">
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-2.png" class="d-md-none" alt="">
+                     <h4 class="heading-4">Sem intermediários</h4>
                   </div>
-                  <h4 class="heading-4">Sem intermediários</h4>
-                  <p>Escolha o fornecedor que quiser para comprar as chapas já nas medidas corretas. Oferecemos uma lista de alguns, mas sinta-se livre para achar novos se preferir. Basta escolher o material e fazer o pedido sem intermediários.</p>
-                  <a href="#" class="link">chapas <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  <div class="text-box">
+                     <p>Escolha o fornecedor que quiser para comprar as chapas já nas medidas corretas. Oferecemos uma lista de alguns, mas sinta-se livre para achar novos se preferir. Basta escolher o material e fazer o pedido sem intermediários.</p>
+                     <a href="#" class="link">chapas <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  </div>
                </div>
 
-               <div class="intro-item">
+               <div class="intro-item item-3">
                   <h4 class="heading-4">como assim?</h4>
                   <p>Postamos no nosso canal de <a href="#">YouTube</a> cada detalhe da montagem dos modelos. De como colar uma cavilha até dicas de acabamento e muito mais</p>
                   <a href="#" class="link">Mais <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
@@ -153,12 +157,14 @@ get_header(); ?>
 
             <div class="col-md-4">
                <div class="intro-item">
-                  <div class="image-mobile d-md-none">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-3.png" alt="">
+                  <div class="image-mobile">
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-3.png" class="d-md-none" alt="">
+                     <h4 class="heading-4">Mais lindo ainda!</h4>
                   </div>
-                  <h4 class="heading-4">Mais lindo ainda!</h4>
-                  <p>Depois de pronto o móvel, basta fazer o acabamento. Escolha as cores, vernizes e tudo mais o que você precisa. Se você quiser, pode se inspirar no nosso <a href="#">Instagram</a> com diversas variações feitas por nós e por nossos clientes orgulhosos de seus móveis.</p>
-                  <a href="#" class="link">inspire <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  <div class="text-box">
+                     <p>Depois de pronto o móvel, basta fazer o acabamento. Escolha as cores, vernizes e tudo mais o que você precisa. Se você quiser, pode se inspirar no nosso <a href="#">Instagram</a> com diversas variações feitas por nós e por nossos clientes orgulhosos de seus móveis.</p>
+                     <a href="#" class="link">inspire <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  </div>
                </div>
             </div>
          </div>
