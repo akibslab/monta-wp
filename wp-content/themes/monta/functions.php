@@ -191,26 +191,26 @@ add_action('wp_enqueue_scripts', 'monta_files');
 /**
  * Register Custom Post Type
  */
-// add_action('init', 'monta_custom_post');
-// function monta_custom_post() {
-//    // Register Custom Post for CPT
-//    register_post_type(
-//       'cpt',
-//       array(
-//          'labels' => array(
-//             'name' => __('CPTs', 'monta'),
-//             'singular_name' => __('CPT', 'monta'),
-//             'add_new' => __('Add New CPT', 'monta'),
-//             'add_new_item' => __('Add New CPT', 'monta'),
-//          ),
-//          'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
-//          'public'       => false,
-//          'show_ui'      => true,
-//          'show_in_rest' => true,
-//          'menu_icon'    => 'dashicons-slides',
-//       )
-//    );
-// }
+add_action('init', 'monta_custom_post');
+function monta_custom_post() {
+   // Register Custom Post for Product
+   register_post_type(
+      'product-page',
+      array(
+         'labels' => array(
+            'name' => __('Products', 'monta'),
+            'singular_name' => __('Product', 'monta'),
+            'add_new' => __('Add New Product', 'monta'),
+            'add_new_item' => __('Add New Product', 'monta'),
+         ),
+         'supports' => array('title', 'editor', 'custom-fields', 'thumbnail',),
+         'public'       => true,
+         'show_ui'      => true,
+         'show_in_rest' => true,
+         'menu_icon'    => 'dashicons-cart',
+      )
+   );
+}
 
 /**
  * Register widget area.
@@ -247,55 +247,6 @@ add_action('wp_enqueue_scripts', 'monta_files');
 // }
 // add_filter('excerpt_more', 'monta_excerpt_more');
 
-
-/**
- * Theme Customize Register
- */
-// add_action('customize_register', 'monta_customize_register');
-// function monta_customize_register($wp_customize) {
-//    // Header Area
-//    $wp_customize->add_section('monta_header_area', array(
-//       'title'    => __('Header Area', 'monta'),
-//       'description' => __('If you interested to update your header area, you can do it form here.', 'monta'),
-//    ));
-//    $wp_customize->add_setting('monta_logo', array(
-//       'default'        => get_bloginfo('name'),
-//    ));
-//    $wp_customize->add_control(
-//       new WP_Customize_Image_Control(
-//          $wp_customize,
-//          'monta_logo',
-//          array(
-//             'label'      => __('Upload a logo', 'monta'),
-//             'description'      => __('If you want to update your site logo, just upload it here.', 'monta'),
-//             'section'    => 'monta_header_area',
-//             'settings'   => 'monta_logo',
-//          )
-//       )
-//    );
-
-/**
- * Menu Position
- */
-// $wp_customize->add_setting('monta_menu_position', array(
-//    'default'        => 'right_menu',
-// ));
-// $wp_customize->add_control(
-//    'monta_menu_position',
-//    array(
-//       'label'      => __('Menu Position', 'monta'),
-//       'description'      => __('Select menu position.', 'monta'),
-//       'section'    => 'monta_header_area',
-//       'settings'   => 'monta_menu_position',
-//       'type' => 'radio',
-//       'choices' => array(
-//          'left_menu' => __('Left Menu', 'monta'),
-//          'right_menu' => __('Right Menu', 'monta'),
-//          'center_menu' => __('Center Menu', 'monta')
-//       )
-//    )
-// );
-// }
 
 
 /**
