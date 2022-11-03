@@ -1035,10 +1035,10 @@ header .mobile-toggle img {
 	background-color: #fafafa;
 }
 .about-section .margin-bottom {
-	margin-bottom: 80px;
+	margin-bottom: 100px;
 }
 .about-section .section-title {
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 .about-section .section-subtitle {
@@ -1047,6 +1047,9 @@ header .mobile-toggle img {
 .about-section .section-subtitle h3 {
 	font-size: 32px;
 	color: #353333;
+}
+.about-section .section-subtitle h3.gray {
+	color: #848484;
 }
 .about-bottom-section .content-title {
 	text-align: center;

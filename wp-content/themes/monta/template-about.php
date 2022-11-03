@@ -54,7 +54,7 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="row margin-bottom ">
-			<div class="col-lg-6 padding-right">
+			<div class="col-lg-5">
 				<div class="section-subtitle">
 					<h3 class="heading-3">
 						eu precisava descobrir como ajudar as outras pessoas a fazerem
@@ -74,7 +74,7 @@ get_header(); ?>
 					</p>
 				</div>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6 offset-lg-1">
 				<div class="section-subtitle">
 					<h3 class="heading-3">
 						nosso modelo ajudará milhares de pessoas a terem a mesma
@@ -106,7 +106,7 @@ get_header(); ?>
 							</h2>
 					</div>
 					<div class="section-subtitle">
-						<h3 class="heading-3">Luiz Camara Lopes <br>
+						<h3 class="heading-3 gray">Luiz Camara Lopes <br>
 							Criador da Monta lá
 						</h3>
 					</div>
