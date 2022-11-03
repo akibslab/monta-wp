@@ -184,19 +184,22 @@
 @media only screen and (max-width: 767px) {
 	h1.heading-1 {
 		font-size: 64px;
-		margin-bottom: 10px;
+		font-weight: 400;
 	}
 
 	h2.heading-2 {
 		font-size: 32px;
+		font-weight: 400;
 	}
 
 	h3.heading-3 {
 		font-size: 20px;
+		font-weight: 400;
 	}
 
 	h4.heading-4 {
 		font-size: 20px;
+		font-weight: 400;
 	}
 
 	.section-title {
@@ -271,22 +274,55 @@
 		padding: 50px 0 20px;
 	}
 
+	.intro-section .section-title {
+	  margin-bottom: 59px;
+	}
+
 	.intro-section .intro-box {
-		margin-bottom: 40px;
+		margin-bottom: 0;
+	}
+
+	.intro-section .intro-box .plus-icon {
+		margin-bottom: 20px;
+	}
+
+	.intro-section .intro-box .equal-icon {
+		margin-top: -45px;
 	}
 
 	.intro-section .intro-item {
-		margin-bottom: 20px;
+		margin-bottom: 0;
 		text-align: center;
-		min-height: 380px;
 		max-width: 350px;
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		flex-direction: column;
+	}
+
+	.intro-section .intro-item.item-1 {
+		min-height: 419px;
+	}
+
+	.intro-section .intro-item.item-2 {
+		min-height: 336px;
+	}
+
+
+	.intro-section .intro-item.item-3 {
+		min-height: 350px;
+		margin-top: -12px;
+	}
+
+	.intro-section .intro-item.item-1 .text-box {
+		padding-top: 60px;
+	}
+
+	.intro-section .intro-item.item-2 .text-box {
+		padding-top: 35px;
+	}
+
+	.intro-section .intro-item.item-3 .text-box {
+		padding-top: 75px;
 	}
 
 	.intro-section .intro-box .col-md-4 .intro-item:nth-child(2) {
@@ -296,11 +332,29 @@
 	.intro-section .intro-item h4.heading-4 {
 		max-width: 350px;
 		width: 100%;
-		margin: -40px auto 0;
+		margin-bottom: 0;
+	}
+
+	.intro-section .intro-item.item-1 h4.heading-4 {
+		margin-top: -35px;
+	}
+
+	.intro-section .intro-item.item-2 h4.heading-4 {
+		margin-top: -100px;
+	}
+
+	.intro-section .intro-item.item-3 h4.heading-4 {
+		margin-top: -90px;
 	}
 
 	.intro-section .intro-item .text-box {
 		display: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.intro-section .intro-item a.link {
+		text-align: right;
 	}
 
 	.features-box .feature-item.item-2,
@@ -315,6 +369,11 @@
 		border: none !important;
 		padding: 0;
 		height: 80px;
+	}
+
+	.features-box .feature-item p {
+		max-width: 250px;
+		width: 100%;
 	}
 
 	.features-box .feature-item:hover p {
@@ -375,6 +434,10 @@
 	.features-box .feature-item.item-4:hover {
 		background: initial;
 		z-index: initial;
+	}
+
+	.features-box .feature-item h4.heading-4 {
+		font-size: 24px;
 	}
 
 	.product-section {
