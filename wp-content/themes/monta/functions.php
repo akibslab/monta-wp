@@ -275,6 +275,7 @@ if (!class_exists('TGM_Plugin_Activation')) {
  */
 if (class_exists('ACF')) {
    include_once('inc/acf/acf-option.php');
+   include_once('inc/acf/acf-data.php');
 }
 
 // ACF Jason Save
