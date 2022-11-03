@@ -29,7 +29,7 @@ get_header(); ?>
 						<h2 class="heading-2">Sobre nós</h2>
 					</div>
 					<div class="section-subtitle">
-						<h3>Fazer produtos em casa é coisa de família.</h3>
+						<h3 class="heading-3">Fazer produtos em casa é coisa de família.</h3>
 					</div>
 					<div class="about-content">
 						<p>
@@ -47,6 +47,8 @@ get_header(); ?>
 							poderiam fazer com as próprias mãos. Você pode fazer tudo o
 							que você quiser.
 						</p>
+
+						<h5 class="heading-5">você pode fazer tudo o que você quiser.</h5>
 					</div>
 				</div>
 			</div>
@@ -54,7 +56,7 @@ get_header(); ?>
 		<div class="row margin-bottom ">
 			<div class="col-lg-6 padding-right">
 				<div class="section-subtitle">
-					<h3>
+					<h3 class="heading-3">
 						eu precisava descobrir como ajudar as outras pessoas a fazerem
 						o mesmo
 					</h3>
@@ -74,7 +76,7 @@ get_header(); ?>
 			</div>
 			<div class="col-lg-6">
 				<div class="section-subtitle">
-					<h3>
+					<h3 class="heading-3">
 						nosso modelo ajudará milhares de pessoas a terem a mesma
 						sensação
 					</h3>
@@ -104,7 +106,7 @@ get_header(); ?>
 							</h2>
 					</div>
 					<div class="section-subtitle">
-						<h3>Luiz Camara Lopes <br>
+						<h3 class="heading-3">Luiz Camara Lopes <br>
 							Criador da Monta lá
 						</h3>
 					</div>
