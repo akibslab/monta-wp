@@ -861,6 +861,9 @@ header .mobile-toggle img {
 	padding: 0 0 32px;
 	font-size: 16px;
 }
+.accordion-body p {
+	color: #848484;
+}
 
 .faq-section .accordion-body p:last-child {
 	margin-bottom: 0;
@@ -1051,6 +1054,9 @@ header .mobile-toggle img {
 .about-section .section-subtitle h3.gray {
 	color: #848484;
 }
+.about-section .section-subtitle h3.line-height {
+	line-height: 32px;
+}
 .about-bottom-section .content-title {
 	text-align: center;
 }
@@ -1062,6 +1068,8 @@ header .mobile-toggle img {
 }
 .about-content h5.heading-5 {
 	display: none;
+	line-height: 1;
+	margin-bottom: -15px;
 }
 /* Footer Area */
 footer {
