@@ -582,7 +582,10 @@
 	}
 
 	.about-section .section-subtitle h3 {
-		font-size: 22px;
+		font-size: 20px;
+	}
+	.about-section .section-subtitle h3.line-height {
+		font-size: 16px;
 	}
 	.about-bottom-section .content-title h2.heading-2:first-child {
 		font-size: 20px;
