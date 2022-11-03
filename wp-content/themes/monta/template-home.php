@@ -101,7 +101,7 @@ get_header(); ?>
 
 <!-- Intro Section Start -->
 <section class="intro-section">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon" alt="">
+   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon d-none d-md-block" alt="">
    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse d-none d-md-block" alt="">
 
    <div class="container">
@@ -131,9 +131,13 @@ get_header(); ?>
                   </div>
                   <div class="text-box">
                      <p>Dentro de cada tubo, tudo o que você precisa para montar o móvel. Projeto de furação para colocar sobre cada peça de madeira com a posição de cada furo. As tampas se juntam e formam um gabarito que garantirá furos perfeitos e precisos. Cavilhas, parafusos, minifix,...já incluídos você só precisará dos itens que não fazem parte do móvel como parafusadeira com broca 8mm, chave alen 6 e pouco mais. A partir daqui, falta escolher as chapas</p>
-                     <a href="#" class="link">Catálogo <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                     <a href="#" class="link  d-none d-md-block">Catálogo <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
                   </div>
                </div>
+            </div>
+
+            <div class="plus-icon d-md-none text-center">
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/plus.png" alt="">
             </div>
 
             <div class="col-md-4">
@@ -148,15 +152,19 @@ get_header(); ?>
                   </div>
                </div>
 
-               <div class="intro-item item-3">
+               <div class="intro-item">
                   <h4 class="heading-4">como assim?</h4>
                   <p>Postamos no nosso canal de <a href="#">YouTube</a> cada detalhe da montagem dos modelos. De como colar uma cavilha até dicas de acabamento e muito mais</p>
                   <a href="#" class="link">Mais <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
                </div>
             </div>
 
+            <div class="equal-icon d-md-none text-center">
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/equal.png" alt="">
+            </div>
+
             <div class="col-md-4">
-               <div class="intro-item">
+               <div class="intro-item item-3">
                   <div class="image-mobile">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-3.png" class="d-md-none" alt="">
                      <h4 class="heading-4">Mais lindo ainda!</h4>
