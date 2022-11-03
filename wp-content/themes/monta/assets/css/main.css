@@ -89,6 +89,12 @@ h4.heading-4 {
 }
 
 h5.heading-5 {
+	font-family: "Neue Machina", sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	color: #353333;
+	text-transform: uppercase;
+	line-height: 32px;
 }
 
 h6.heading-6 {
@@ -1026,6 +1032,7 @@ header .mobile-toggle img {
 /* About us */
 .about-section {
 	padding: 105px 0;
+	background-color: #fafafa;
 }
 .about-section .margin-bottom {
 	margin-bottom: 80px;
@@ -1049,6 +1056,9 @@ header .mobile-toggle img {
 }
 .about-bottom-section .section-subtitle {
 	text-align: center;
+}
+.about-content h5.heading-5 {
+	display: none;
 }
 /* Footer Area */
 footer {
