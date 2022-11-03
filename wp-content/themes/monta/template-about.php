@@ -54,7 +54,7 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="row margin-bottom ">
-			<div class="col-lg-5">
+			<div class="col-lg-5 mb-3 mb-md-0">
 				<div class="section-subtitle">
 					<h3 class="heading-3">
 						eu precisava descobrir como ajudar as outras pessoas a fazerem
@@ -106,7 +106,7 @@ get_header(); ?>
 							</h2>
 					</div>
 					<div class="section-subtitle">
-						<h3 class="heading-3 gray">Luiz Camara Lopes <br>
+						<h3 class="heading-3 line-height gray">Luiz Camara Lopes <br>
 							Criador da Monta lá
 						</h3>
 					</div>
