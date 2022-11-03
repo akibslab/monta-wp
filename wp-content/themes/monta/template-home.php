@@ -14,40 +14,78 @@ if (!defined('ABSPATH')) {
 get_header(); ?>
 
 <!-- Slider Section Start -->
+<?php
+$slides = get_field('slides');
+?>
 <section class="slider-section">
 
    <div id="sliderIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
-         <button type="button" data-bs-target="#sliderIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#sliderIndicators" class="active" data-bs-slide-to="0" aria-label="Slide 1"></button>
          <button type="button" data-bs-target="#sliderIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
          <button type="button" data-bs-target="#sliderIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
+         <?php
 
-         <div class="carousel-item active">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="text-box">
-                        <h1 class="heading-1">Móveis <br> únicos</h1>
-                        <p> Simplificamos todos os passos da produção de um móvel para você realizar os modelos como se fosse mágica. Escolha os modelos e controle tudo partir de agora.</p>
-                        <a href="#" class="btn button-primary">Catálogo</a>
+         if (!empty($slides)) :
+            $n = 0;
+            foreach ($slides as $slide) : $n++; ?>
+               <div class="carousel-item <?php if ($n == '1') { ?> active <?php } ?>">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-5">
+                           <div class="text-box">
+                              <h1 class="heading-1"><?php echo $slide['title']; ?></h1>
+                              <p> <?php esc_html_e($slide['description'], 'monta'); ?></p>
+                              <?php if (!empty($slide['button_text'])) : ?>
+                                 <a href="<?php echo esc_url($slide['button_link']); ?>" class="btn button-primary"><?php esc_html_e($slide['button_text'], 'monta'); ?></a>
+                              <?php endif; ?>
+                           </div>
+                        </div>
+                        <div class="col-md-7">
+                           <div class="image-box">
+                              <img src="<?php echo esc_url($slide['image']); ?>" class="main" alt="">
+
+                              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon.svg'); ?>" class="polygon" alt="">
+                              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-1.svg'); ?>" class="rectangle-1" alt="">
+                              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-2.svg'); ?>" class="rectangle-2" alt="">
+                           </div>
+                        </div>
                      </div>
-                  </div>
-                  <div class="col-md-7">
-                     <div class="image-box">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider/1.png" class="main" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-1.svg" class="rectangle-1" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-2.svg" class="rectangle-2" alt="">
-                     </div>
+                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse" alt="">
                   </div>
                </div>
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse" alt="">
+            <?php endforeach;
+         else : ?>
+            <div class="carousel-item active">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-5">
+                        <div class="text-box">
+                           <h1 class="heading-1"><?php echo 'Móveis <br> únicos'; ?></h1>
+                           <p><?php echo 'Simplificamos todos os passos da produção de um móvel para você realizar os modelos como se fosse mágica. Escolha os modelos e controle tudo partir de agora.'; ?></p>
+                           <a href="#" class="btn button-primary"><?php echo 'Catálogo'; ?></a>
+                        </div>
+                     </div>
+                     <div class="col-md-7">
+                        <div class="image-box">
+                           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/slider/1.png'); ?>" class="main" alt="">
+                           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon.svg'); ?>" class="polygon" alt="">
+                           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-1.svg'); ?>" class="rectangle-1" alt="">
+                           <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-2.svg'); ?>" class="rectangle-2" alt="">
+                        </div>
+                     </div>
+                  </div>
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse" alt="">
+               </div>
             </div>
-         </div>
 
-         <div class="carousel-item">
+         <?php endif;
+         ?>
+
+
+         <!-- <div class="carousel-item">
             <div class="container">
                <div class="row">
                   <div class="col-md-5">
@@ -91,7 +129,7 @@ get_header(); ?>
                </div>
                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse" alt="">
             </div>
-         </div>
+         </div> -->
 
       </div>
    </div>
@@ -206,32 +244,36 @@ get_header(); ?>
 
 
 <!-- Gallery Section Start -->
+<?php
+$images = get_field('galleries')
+?>
 <section class="gallery-section">
    <div id="galleryControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
+         <?php
+         if (!empty($images)) :
+            $n = 0;
+            foreach ($images as $image) :
+               $n++;
+         ?>
+               <div class="carousel-item <?php if ($n == '1') { ?>active<?php } ?>" data-bs-interval="50000">
+                  <img src="<?php echo esc_url($image); ?>" class="d-block w-100" alt="...">
+               </div>
 
-         <div class="carousel-item active" data-bs-interval="50000">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery/1.jpg" class="d-block w-100" alt="...">
-         </div>
-
-
-         <div class="carousel-item" data-bs-interval="50000">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery/2.jpg" class="d-block w-100" alt="...">
-         </div>
-
-
-         <div class="carousel-item" data-bs-interval="50000">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery/3.jpg" class="d-block w-100" alt="...">
-         </div>
-
+            <?php endforeach;
+         else : ?>
+            <div class="carousel-item active" data-bs-interval="50000">
+               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/gallery/1.jpg'); ?>" class="d-block w-100" alt="...">
+            </div>
+         <?php endif; ?>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#galleryControls" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="visually-hidden">Previous</span>
+         <span class="visually-hidden"><?php esc_html_e('Previous', 'monta'); ?></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#galleryControls" data-bs-slide="next">
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="visually-hidden">Next</span>
+         <span class="visually-hidden"><?php esc_html_e('Next', 'monta'); ?></span>
       </button>
    </div>
    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/zoom.png" class="zoom-icon d-md-none" alt="">
@@ -240,136 +282,89 @@ get_header(); ?>
 
 
 <!-- Product Section Start -->
+<?php
+$productSectionTitle = get_field('product_section_title');
+$productLargeImage = get_field('product_large_image');
+?>
 <section class="product-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <div class="section-title text-center">
-               <h2 class="heading-2">produtos</h2>
+               <h2 class="heading-2"><?php if (!empty($productSectionTitle)) {
+                                          echo $productSectionTitle;
+                                       } else {
+                                          echo 'produtos';
+                                       }; ?></h2>
             </div>
          </div>
       </div>
 
-      <div class="products-box">
-         <div class="row">
-            <div class="item-1 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/1.jpg" alt="">
-                     <h4 class="heading-4">Criado-mudo Buonabitácolo</h4>
+      <?php
+
+      $args = array(
+         'posts_per_page' => 13,
+         'post_type' => 'product-page',
+         'order' => 'DESC'
+      );
+      $product = new WP_Query($args);
+
+      if ($product->have_posts()) :
+      ?>
+         <div class="products-box">
+            <div class="row">
+
+               <?php
+               $n = 0;
+               while ($product->have_posts()) : $product->the_post();
+                  $n++;
+
+                  $productLargeImage = get_field('product_large_image');
+               ?>
+
+                  <div class="item-<?php echo $n; ?>  col-md-4 <?php if ($productLargeImage == 'yes') {
+                                                                  echo 'col-md-8';
+                                                               } else {
+                                                                  echo 'col-6';
+                                                               } ?>">
+                     <a href="<?php the_permalink(); ?>">
+                        <div class="product-item">
+                           <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                           <h4 class="heading-4"><?php the_title(); ?></h4>
+                        </div>
+                     </a>
                   </div>
-               </a>
-            </div>
-            <div class="item-2 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/2.jpg" alt="">
-                     <h4 class="heading-4">Mesa Orange</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-3 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/3.jpg" alt="">
-                     <h4 class="heading-4">Cadeira 01</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-4 col-md-8">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/4.jpg" alt="">
-                     <h4 class="heading-4">Rack Americano Original</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-5 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/5.jpg" alt="">
-                     <h4 class="heading-4">Mesa Caboclo</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-6 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/6.jpg" alt="">
-                     <h4 class="heading-4">Mesa de jantar Weg</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-7 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/7.jpg" alt="">
-                     <h4 class="heading-4">Mesa Leve</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-8 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/8.jpg" alt="">
-                     <h4 class="heading-4">Escrivaninha Luneta</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-9 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/9.jpg" alt="">
-                     <h4 class="heading-4">Linha Sofia</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-10 col-md-8">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/10.jpg" alt="">
-                     <h4 class="heading-4">Buffet Americano</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-11 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/11.jpg" alt="">
-                     <h4 class="heading-4">Estante Scopo 3</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-12 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/12.jpg" alt="">
-                     <h4 class="heading-4">Daybed</h4>
-                  </div>
-               </a>
-            </div>
-            <div class="item-13 col-6 col-md-4">
-               <a href="#">
-                  <div class="product-item">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/13.jpg" alt="">
-                     <h4 class="heading-4">Escrivaninha 6 Marias</h4>
-                  </div>
-               </a>
+
+               <?php endwhile;
+               wp_reset_postdata(); ?>
+
             </div>
          </div>
-      </div>
+      <?php else :
+         echo sprintf('<h6 class="alert alert-warning">%s</h6>', esc_html__('No Product found', 'monta'));
+      endif;
+      ?>
+
    </div>
 </section>
 <!-- Product Section End -->
 
 
 <!-- Problems Section Start -->
+<?php
+$problemSectionTitle = get_field('prblem_section_title');
+$problemContent = get_field('problem_section_content');
+?>
 <section class="problems-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <div class="section-title text-center">
-               <h2 class="heading-2">ame os problemas</h2>
+               <h2 class="heading-2"><?php if (!empty($problemSectionTitle)) {
+                                          echo $problemSectionTitle;
+                                       } else {
+                                          echo 'ame os problemas';
+                                       }; ?></h2>
             </div>
          </div>
       </div>
@@ -378,13 +373,27 @@ get_header(); ?>
          <div class="col-md-12">
             <div class="problems-box d-flex flex-wrap">
                <div class="text-box">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="d-md-none ellipse-1" alt="">
-                  <h3 class="heading-3">Tudo que envolve trabalho, envolve situações inesperadas</h3>
-                  <p>Nós sabemos disso e criamos uma seção com as soluções dos principais problemas que encontramos ao por a mão na massa.</p>
-                  <a href="#" class="btn button-primary lg">Mais</a>
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="d-md-none ellipse-1" alt="">
+
+                  <h3 class="heading-3"><?php if (!empty($problemContent['content_title'])) {
+                                             echo $problemContent['content_title'];
+                                          } else {
+                                             echo 'Tudo que envolve trabalho, envolve situações inesperadas';
+                                          }; ?></h3>
+
+                  <p><?php if (!empty($problemContent['content_description'])) {
+                        echo $problemContent['content_description'];
+                     } else {
+                        echo 'Nós sabemos disso e criamos uma seção com as soluções dos principais problemas que encontramos ao por a mão na massa.';
+                     }; ?></p>
+                  <?php if (!empty($problemContent['button_text'])) : ?>
+                     <a href="<?php echo esc_url($problemContent['button_text']); ?>" class="btn button-primary lg"><?php esc_html_e($problemContent['button_text'], 'monta'); ?></a>
+                  <?php endif; ?>
                </div>
                <div class="image-box d-flex flex-wrap justify-content-center align-items-center">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/problems/problems.jpg" alt="">
+                  <img src="<?php if (!empty($problemContent['content_image'])) : echo esc_url($problemContent['content_image']);
+                              else : echo esc_url(get_template_directory_uri() . '/assets/img/problems/problems.jpg');
+                              endif; ?>" alt="">
                </div>
             </div>
          </div>
@@ -439,16 +448,25 @@ get_header(); ?>
 
 
 <!-- FAQ Section Start -->
+<?php
+$faqSectionTitle = get_field('faq_section_title');
+$faqAccordions = get_field('faq_accordions');
+$faqButton = get_field('faq_button');
+?>
 <section class="faq-section">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-1.svg" class="rectangle-1 d-none d-md-block" alt="">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse d-none d-md-block" alt="">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon-2.svg" class="polygon d-none d-md-block" alt="">
+   <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-1.svg'); ?>" class="rectangle-1 d-none d-md-block" alt="">
+   <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse d-none d-md-block" alt="">
+   <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon-2.svg'); ?>" class="polygon d-none d-md-block" alt="">
 
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <div class="section-title text-center">
-               <h2 class="heading-2">FAQ</h2>
+               <h2 class="heading-2"><?php if (!empty($faqSectionTitle)) {
+                                          echo $faqSectionTitle;
+                                       } else {
+                                          echo 'FAQ';
+                                       }; ?></h2>
             </div>
          </div>
       </div>
@@ -456,97 +474,50 @@ get_header(); ?>
       <div class="row">
          <div class="col-md-10 offset-md-1">
             <div class="accordion accordion-flush" id="accordionFlushExample">
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                        Onde compro o material na medida necessária para os projetos?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
+               <?php
+               if (!empty($faqAccordions)) :
+                  $n = 0;
+                  foreach ($faqAccordions as $accordion) :
+                     $n++;
+               ?>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-<?php echo $n; ?>" aria-expanded="false" aria-controls="flush-collapse-<?php echo $n; ?>">
+                              <?php echo $accordion['heding']; ?>
+                           </button>
+                        </h2>
+                        <div id="flush-collapse-<?php echo $n; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                           <div class="accordion-body">
+                              <p><?php echo $accordion['body']; ?></p>
+                           </div>
+                        </div>
+                     </div>
+
+                  <?php endforeach;
+               else : ?>
+                  <div class="accordion-item">
+                     <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
+                           <?php esc_html_e('Onde compro o material na medida necessária para os projetos?', 'monta'); ?>
+                        </button>
+                     </h2>
+                     <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                           <p><?php esc_html_e('Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!', 'monta'); ?></p>
+                        </div>
                      </div>
                   </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
-                        O que vem dentro do tubo?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-3" aria-expanded="false" aria-controls="flush-collapse-3">
-                        Que ferramentas eu preciso para fazer o móvel?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-4" aria-expanded="false" aria-controls="flush-collapse-4">
-                        Ferragens para gavetas são incluídas nos projetos?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-5" aria-expanded="false" aria-controls="flush-collapse-5">
-                        O móvel já vem pronto?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-6" aria-expanded="false" aria-controls="flush-collapse-6">
-                        Alguem pode me ajudar com a montagem
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="accordion-item">
-                  <h2 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-7" aria-expanded="false" aria-controls="flush-collapse-7">
-                        Ficou feio, e agora?
-                     </button>
-                  </h2>
-                  <div id="flush-collapse-7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum vitae accusamus praesentium beatae quae et ex aliquam nulla ipsa reiciendis eius incidunt libero, commodi! Culpa voluptate nihil hic repellendus!</p>
-                     </div>
-                  </div>
-               </div>
+
+               <?php endif; ?>
             </div>
          </div>
       </div>
 
       <div class="row">
          <div class="col-md-12 text-center">
-            <a href="#" class="btn button-primary">Ver todos</a>
+            <?php if (!empty($faqButton['button_text'])) : ?>
+               <a href="<?php esc_url($faqButton['button_link']); ?>" class="btn button-primary"><?php esc_html_e($faqButton['button_text'], 'monta'); ?></a>
+            <?php endif; ?>
          </div>
       </div>
    </div>
