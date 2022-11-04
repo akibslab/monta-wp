@@ -628,7 +628,7 @@
 
 	/* About us */
 	.about-section {
-		padding: 45px 0;
+		padding: 45px 0 30px;
 	}
 	.about-section .margin-bottom {
 		margin-bottom: 50px;
@@ -652,7 +652,7 @@
 		font-size: 20px;
 		line-height: 32px;
 	}
-	.about-section .section-subtitle h3.line-height {
+	.about-section .section-subtitle h4.line-height {
 		font-size: 16px;
 	}
 	.about-bottom-section .content-title h2.heading-2:first-child {
