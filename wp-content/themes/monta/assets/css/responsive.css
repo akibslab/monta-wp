@@ -176,22 +176,18 @@
 @media only screen and (max-width: 767px) {
 	h1.heading-1 {
 		font-size: 64px;
-		font-weight: 400;
 	}
 
 	h2.heading-2 {
 		font-size: 32px;
-		font-weight: 400;
 	}
 
 	h3.heading-3 {
 		font-size: 20px;
-		font-weight: 400;
 	}
 
 	h4.heading-4 {
 		font-size: 20px;
-		font-weight: 400;
 	}
 
 	.section-title {
@@ -654,6 +650,7 @@
 
 	.about-section .section-subtitle h3 {
 		font-size: 20px;
+		line-height: 32px;
 	}
 	.about-section .section-subtitle h3.line-height {
 		font-size: 16px;

@@ -23,7 +23,7 @@ get_header(); ?>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about.png" alt="" />
 				</div>
 			</div>
-			<div class="col-lg-6 order-0 order-lg-1 ">
+			<div class="col-lg-5 order-0 order-lg-1 ">
 				<div class="about-contents">
 					<div class="section-title">
 						<h2 class="heading-2">Sobre nós</h2>
@@ -106,9 +106,9 @@ get_header(); ?>
 							</h2>
 					</div>
 					<div class="section-subtitle">
-						<h3 class="heading-3 line-height gray">Luiz Camara Lopes <br>
+						<h4 class="heading-4 line-height gray">Luiz Camara Lopes <br>
 							Criador da Monta lá
-						</h3>
+						</h4>
 					</div>
 				</div>
 			</div>
