@@ -1051,17 +1051,17 @@ header .mobile-toggle img {
 	font-size: 32px;
 	color: #353333;
 }
-.about-section .section-subtitle h3.gray {
+.about-section .section-subtitle h4.gray {
 	color: #848484;
 }
-.about-section .section-subtitle h3.line-height {
+.about-section .section-subtitle h4.line-height {
 	line-height: 32px;
 }
 .about-bottom-section .content-title {
 	text-align: center;
 }
 .about-bottom-section .content-title .heading-2 {
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 }
 .about-bottom-section .section-subtitle {
 	text-align: center;
@@ -1069,7 +1069,7 @@ header .mobile-toggle img {
 .about-content h5.heading-5 {
 	display: none;
 	line-height: 1;
-	margin-bottom: -15px;
+	margin: 20px 0 -15px;
 }
 /* Footer Area */
 footer {
