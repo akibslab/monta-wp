@@ -74,7 +74,7 @@ get_header(); ?>
 					</p>
 				</div>
 			</div>
-			<div class="col-lg-6 offset-lg-1">
+			<div class="col-lg-5 offset-lg-1">
 				<div class="section-subtitle">
 					<h3 class="heading-3">
 						nosso modelo ajudará milhares de pessoas a terem a mesma
