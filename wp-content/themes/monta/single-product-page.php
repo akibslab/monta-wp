@@ -84,7 +84,7 @@ $productSocialShare = get_field('social_share');
 						endif; ?>
 					</div>
 					<?php if (!empty($productPrice)) : ?>
-						<div class="product-price"><?php echo $productPrice; ?></div>
+						<h2 class="heading-2 product-price"><?php echo $productPrice; ?></h2>
 					<?php endif; ?>
 					<div class="product-button">
 						<?php if (!empty($productButton['button_text'])) : ?>
