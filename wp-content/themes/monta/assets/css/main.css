@@ -937,7 +937,8 @@ header .mobile-toggle img {
 	height: 100%;
 }
 
-.product-contents .product-title {
+.product-contents .product-title .heading-2 {
+	line-height: 54px;
 	margin-bottom: 40px;
 }
 
@@ -963,7 +964,7 @@ header .mobile-toggle img {
 .product-contents .button-primary {
 	font-size: 18px;
 	font-weight: 500;
-	padding: 18px 55px;
+	padding: 18px 50px;
 }
 
 .product-contents .product-button {
