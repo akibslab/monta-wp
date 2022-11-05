@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Template Name: Product Page
  * The template for displaying single product page.
  *
  * @package Bruno
