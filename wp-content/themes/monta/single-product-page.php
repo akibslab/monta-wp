@@ -30,7 +30,7 @@ $productSocialShare = get_field('social_share');
 			<nav class="breadcrumbs" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="<?php echo home_url('/'); ?>"><span><img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-left.png" alt=""></span> Retorna</a>
+						<a href="<?php echo home_url('/'); ?>"><span><img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-left.png" alt=""></span>Retorna</a>
 					</li>
 				</ol>
 			</nav>
@@ -73,7 +73,7 @@ $productSocialShare = get_field('social_share');
 			<div class="col-lg-6 text-center text-lg-start">
 				<div class="product-contents">
 					<div class="product-title">
-						<h3><?php the_title(); ?></h3>
+						<h2 class="heading-2"><?php the_title(); ?></h2>
 					</div>
 					<div class="product-content">
 						<?php the_content(); ?>
