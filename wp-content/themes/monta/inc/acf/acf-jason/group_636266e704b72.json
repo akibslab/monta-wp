@@ -229,7 +229,7 @@
         },
         {
             "key": "field_63635902f6399",
-            "label": "Section Title",
+            "label": "Section Titles",
             "name": "product_section_title",
             "type": "text",
             "instructions": "Type\/Add section title here.",
@@ -245,6 +245,26 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_63664ec062b59",
+            "label": "Product Items",
+            "name": "product_items_list",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
         },
         {
             "key": "field_636349afd1da4",
@@ -560,5 +580,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667455304
+    "modified": 1667650159
 }
