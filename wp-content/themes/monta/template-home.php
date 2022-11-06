@@ -138,15 +138,29 @@ $slides = get_field('slides');
 
 
 <!-- Intro Section Start -->
+<?php
+$introSectionTitle = get_field('intro_section_title');
+$introDesktopImage = get_field('intro_image_for_desktop');
+$introColumnOne = get_field('intro_column_1');
+$introColumnTwo = get_field('intro_column_2');
+$introColumnThree = get_field('intro_column_3');
+?>
 <section class="intro-section">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon d-none d-md-block" alt="">
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse d-none d-md-block" alt="">
+   <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon.svg'); ?>" class="polygon d-none d-md-block" alt="">
+   <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse d-none d-md-block" alt="">
 
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <div class="section-title text-center">
-               <h2 class="heading-2">Fácil, transparente e inteligente</h2>
+               <h2 class="heading-2">
+                  <?php if (!empty($introSectionTitle)) :
+                     echo $introSectionTitle;
+                  else :
+                     echo 'Fácil, transparente e inteligente';
+                  endif;
+                  ?>
+               </h2>
             </div>
          </div>
       </div>
@@ -154,7 +168,10 @@ $slides = get_field('slides');
       <div class="row">
          <div class="col-md-12">
             <div class="image-box d-none d-md-block">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/intro.png" alt="">
+               <img src="<?php if (!empty($introDesktopImage)) : echo esc_url($introDesktopImage);
+                           else : echo esc_url(get_template_directory_uri() . '/assets/img/intro/intro.png');
+                           endif; ?>" alt="">
+
             </div>
          </div>
       </div>
@@ -164,78 +181,88 @@ $slides = get_field('slides');
             <div class="col-md-4">
                <div class="intro-item item-1">
                   <div class="image-mobile">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-1.png" class="d-md-none"  alt="">
-                     <h4 class="heading-4">Tubo que você precisa para montar</h4>
+                     <img src="<?php echo esc_url($introColumnOne['column_image']); ?>" class="d-md-none" alt="">
+                     <h4 class="heading-4"><?php echo $introColumnOne['column_title']; ?></h4>
                   </div>
                   <div class="text-box">
-                     <p>Dentro de cada tubo, tudo o que você precisa para montar o móvel. Projeto de furação para colocar sobre cada peça de madeira com a posição de cada furo. As tampas se juntam e formam um gabarito que garantirá furos perfeitos e precisos. Cavilhas, parafusos, minifix,...já incluídos você só precisará dos itens que não fazem parte do móvel como parafusadeira com broca 8mm, chave alen 6 e pouco mais. A partir daqui, falta escolher as chapas</p>
-                     <a href="#" class="link  d-none d-md-block">Catálogo <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                     <p><?php echo $introColumnOne['column_description']; ?></p>
+                     <?php if ($introColumnOne['button_text']) : ?>
+                        <a href="<?php echo $introColumnOne['button_link']; ?>" class="link  d-none d-md-block"><?php echo $introColumnOne['button_text']; ?> <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/arrow-right.svg'); ?>" class="icon-right" alt=""></a>
+                     <?php endif; ?>
                   </div>
                </div>
             </div>
 
             <div class="plus-icon d-md-none text-center">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/plus.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/plus.png'); ?>" alt="">
             </div>
 
             <div class="col-md-4">
                <div class="intro-item item-2">
                   <div class="image-mobile">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-2.png" class="d-md-none" alt="">
-                     <h4 class="heading-4">Sem intermediários</h4>
+                     <img src="<?php echo esc_url($introColumnTwo['column_image']); ?>" class="d-md-none" alt="">
+                     <h4 class="heading-4"><?php echo $introColumnTwo['column_title']; ?></h4>
                   </div>
                   <div class="text-box">
-                     <p>Escolha o fornecedor que quiser para comprar as chapas já nas medidas corretas. Oferecemos uma lista de alguns, mas sinta-se livre para achar novos se preferir. Basta escolher o material e fazer o pedido sem intermediários.</p>
-                     <a href="#" class="link">chapas <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                     <p><?php echo $introColumnTwo['column_description']; ?></p>
+                     <?php if ($introColumnTwo['button_text']) : ?>
+                        <a href="<?php echo $introColumnTwo['button_link']; ?>" class="link"><?php echo $introColumnTwo['button_text']; ?> <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/arrow-right.svg'); ?>" class="icon-right" alt=""></a>
+                     <?php endif; ?>
                   </div>
                </div>
 
                <div class="intro-item">
-                  <h4 class="heading-4">como assim?</h4>
-                  <p>Postamos no nosso canal de <a href="#">YouTube</a> cada detalhe da montagem dos modelos. De como colar uma cavilha até dicas de acabamento e muito mais</p>
-                  <a href="#" class="link">Mais <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                  <?php if ($introColumnTwo['column_title_2']) : ?>
+                     <h4 class="heading-4"><?php echo $introColumnTwo['column_title_2']; ?></h4>
+                  <?php endif;
+                  if ($introColumnTwo['column_description_2']) : ?>
+                     <p><?php echo $introColumnTwo['column_description_2']; ?></p>
+                  <?php endif;
+                  if ($introColumnTwo['button_text_2']) : ?>
+                     <a href="<?php echo $introColumnTwo['button_link_2']; ?>" class="link"><?php echo $introColumnTwo['button_text_2']; ?> <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/arrow-right.svg'); ?>" class="icon-right" alt=""></a>
+                  <?php endif; ?>
                </div>
             </div>
 
             <div class="equal-icon d-md-none text-center">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/equal.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/equal.png'); ?>" alt="">
             </div>
 
             <div class="col-md-4">
                <div class="intro-item item-3">
                   <div class="image-mobile">
-                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro/mobile-3.png" class="d-md-none" alt="">
-                     <h4 class="heading-4">Mais lindo ainda!</h4>
+                     <img src="<?php echo esc_url($introColumnThree['column_image']); ?>" class="d-md-none" alt="">
+                     <h4 class="heading-4"><?php echo $introColumnThree['column_title']; ?></h4>
                   </div>
                   <div class="text-box">
-                     <p>Depois de pronto o móvel, basta fazer o acabamento. Escolha as cores, vernizes e tudo mais o que você precisa. Se você quiser, pode se inspirar no nosso <a href="#">Instagram</a> com diversas variações feitas por nós e por nossos clientes orgulhosos de seus móveis.</p>
-                     <a href="#" class="link">inspire <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/arrow-right.svg" class="icon-right" alt=""></a>
+                     <p><?php echo $introColumnThree['column_description']; ?></p>
+                     <?php if (!empty($introColumnThree['button_text'])) : ?>
+                        <a href="<?php echo $introColumnThree['button_link']; ?>" class="link"><?php echo $introColumnThree['button_text']; ?> <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/arrow-right.svg'); ?>" class="icon-right" alt=""></a>
+                     <?php endif; ?>
                   </div>
                </div>
             </div>
          </div>
       </div>
 
+      <!-- Features box -->
+      <?php $features = get_field('features'); ?>
       <div class="row">
          <div class="col-md-12">
-            <div class="features-box d-flex flex-wrap flex-md-nowrap">
-               <div class="feature-item text-center item-1 d-flex flex-wrap flex-column justify-content-center align-items-center">
-                  <h4 class="heading-4">liberdade</h4>
-                  <p>Não vendemos móveis, mas sim a inteligência por trás deles, deixando você livre para decidir tudo a partir de agora</p>
+            <?php if (!empty($features)) : ?>
+               <div class="features-box d-flex flex-wrap flex-md-nowrap">
+                  <?php
+                  $n = 0;
+                  foreach ($features as $feature) :
+                     $n++;
+                  ?>
+                     <div class="feature-item text-center item-<?php echo $n; ?> d-flex flex-wrap flex-column justify-content-center align-items-center">
+                        <h4 class="heading-4"><?php echo $feature['feature_title']; ?></h4>
+                        <p><?php echo $feature['feature_description']; ?></p>
+                     </div>
+                  <?php endforeach; ?>
                </div>
-               <div class="feature-item text-center item-2 d-flex flex-wrap flex-column justify-content-center align-items-center">
-                  <h4 class="heading-4">fortalecimento</h4>
-                  <p>com cada decisão, erros e acertos farão de você melhor</p>
-               </div>
-               <div class="feature-item text-center item-3 d-flex flex-wrap flex-column justify-content-center align-items-center">
-                  <h4 class="heading-4">pessoal</h4>
-                  <p>O orgulho de ter realizado é algo transcendental.</p>
-               </div>
-               <div class="feature-item text-center item-4 d-flex flex-wrap flex-column justify-content-center align-items-center">
-                  <h4 class="heading-4">independência</h4>
-                  <p>agora você tem mais confiança e iniciou uma jornada infinita. Parabéns!</p>
-               </div>
-            </div>
+            <?php endif; ?>
          </div>
       </div>
    </div>
@@ -284,7 +311,7 @@ $images = get_field('galleries')
 <!-- Product Section Start -->
 <?php
 $productSectionTitle = get_field('product_section_title');
-$productLargeImage = get_field('product_large_image');
+$selectProducts = get_field('select_products');
 ?>
 <section class="product-section">
    <div class="container">
@@ -302,41 +329,35 @@ $productLargeImage = get_field('product_large_image');
 
       <?php
 
-      $args = array(
-         'posts_per_page' => 13,
-         'post_type' => 'product-page',
-         'order' => 'DESC'
-      );
-      $product = new WP_Query($args);
-
-      if ($product->have_posts()) :
+      if ($selectProducts) :
       ?>
          <div class="products-box">
             <div class="row">
 
                <?php
                $n = 0;
-               while ($product->have_posts()) : $product->the_post();
+               foreach ($selectProducts as $product) :
                   $n++;
 
-                  $productLargeImage = get_field('product_large_image');
+                  $permalink = get_permalink($product->ID);
+                  $productImage = get_the_post_thumbnail_url($product->ID, 'full');
+                  $title = get_the_title($product->ID);
+                  $largeImage = get_field('product_large_image', $product->ID);
                ?>
-
-                  <div class="item-<?php echo $n; ?>  col-md-4 <?php if ($productLargeImage == 'yes') {
-                                                                  echo 'col-md-8';
-                                                               } else {
-                                                                  echo 'col-6';
-                                                               } ?>">
-                     <a href="<?php the_permalink(); ?>">
+                  <div class="item-<?php echo $n; ?> col-6 <?php if ($largeImage == 'yes') {
+                                                               echo 'col-md-8';
+                                                            } else {
+                                                               echo 'col-md-4';
+                                                            } ?>">
+                     <a href="<?php echo esc_url($permalink); ?>">
                         <div class="product-item">
-                           <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
-                           <h4 class="heading-4"><?php the_title(); ?></h4>
+                           <img src="<?php echo esc_url($productImage); ?>" alt="<?php esc_html_e($title, 'monta'); ?>">
+                           <h4 class="heading-4"><?php esc_html_e($title, 'monta'); ?></h4>
                         </div>
                      </a>
                   </div>
 
-               <?php endwhile;
-               wp_reset_postdata(); ?>
+               <?php endforeach; ?>
 
             </div>
          </div>
@@ -404,12 +425,20 @@ $problemContent = get_field('problem_section_content');
 
 
 <!-- Contact Section Start -->
+<?php
+$contactSectionTitle = get_field('contact_section_title');
+$formShortCode = get_field('form_shortcode');
+?>
 <section class="contact-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <div class="section-title text-center">
-               <h2 class="heading-2">Se indentificou com algo disso tudo? torne-se um parceiro</h2>
+               <h2 class="heading-2"><?php if (!empty($contactSectionTitle)) {
+                                          echo $contactSectionTitle;
+                                       } else {
+                                          echo 'Se indentificou com algo disso tudo? torne-se um parceiro';
+                                       } ?></h2>
             </div>
          </div>
       </div>
@@ -417,28 +446,13 @@ $problemContent = get_field('problem_section_content');
       <div class="row">
          <div class="col-lg-6 d-none d-md-block">
             <div class="arrow-animation">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact/polygon-yellow.svg" class="polygon-yellow" alt="">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact/polygon-blue.svg" class="polygon-blue" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/contact/polygon-yellow.svg'); ?>" class="polygon-yellow" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/contact/polygon-blue.svg'); ?>" class="polygon-blue" alt="">
             </div>
          </div>
          <div class="col-lg-6">
             <div class="contact-form">
-               <p class="p-top">Preencha o formulário, entraremos em contato</p>
-               <form action="">
-                  <div class="input-box">
-                     <input type="text" class="form-control" placeholder="Nome">
-                  </div>
-                  <div class="input-box">
-                     <input type="text" class="form-control" placeholder="Telefone">
-                  </div>
-                  <div class="input-box">
-                     <input type="email" class="form-control" placeholder="E-mail">
-                  </div>
-                  <div class="input-box">
-                     <textarea class="form-control" placeholder="Sua mensagem"></textarea>
-                  </div>
-                  <button class="btn button-primary" type="submit">ENVIAR</button>
-               </form>
+               <?php echo do_shortcode($formShortCode); ?>
             </div>
          </div>
       </div>
@@ -526,40 +540,49 @@ $faqButton = get_field('faq_button');
 
 
 <!-- Instagram Section Start -->
+<?php
+$instagramFeed = get_field('instagram_feed_shortcode');
+?>
 <section class="instagram-section">
    <div class="container">
-      <div class="row">
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/1.jpg" alt="">
+      <?php if (!empty($instagramFeed)) : ?>
+         <div class="row">
+            <?php echo do_shortcode($instagramFeed); ?>
+         </div>
+      <?php else : ?>
+         <div class="row">
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/1.jpg'); ?>" alt="">
+               </div>
+            </div>
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/2.jpg'); ?>" alt="">
+               </div>
+            </div>
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/3.jpg'); ?>" alt="">
+               </div>
+            </div>
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/4.jpg'); ?>" alt="">
+               </div>
+            </div>
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/5.jpg'); ?>" alt="">
+               </div>
+            </div>
+            <div class="col-6 col-md-4">
+               <div class="image-box">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/instagram/6.jpg'); ?>" alt="">
+               </div>
             </div>
          </div>
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/2.jpg" alt="">
-            </div>
-         </div>
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/3.jpg" alt="">
-            </div>
-         </div>
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/4.jpg" alt="">
-            </div>
-         </div>
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/5.jpg" alt="">
-            </div>
-         </div>
-         <div class="col-6 col-md-4">
-            <div class="image-box">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram/6.jpg" alt="">
-            </div>
-         </div>
-      </div>
+      <?php endif; ?>
    </div>
 </section>
 <!-- Instagram Section End -->
