@@ -22,6 +22,11 @@ function monta_required_plugins() {
          'slug'      => 'disable-gutenberg',
          'required'  => true,
       ),
+      array(
+         'name'      => esc_html__('Contact Form 7', 'monta'),
+         'slug'      => 'contact-form-7',
+         'required'  => true,
+      ),
 
 
       // // This is an example of how to include a plugin bundled with a theme.

@@ -178,7 +178,7 @@ function monta_files() {
    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', ['jquery'], '5.2.0', true);
    wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/assets/js/magnific-popup.js', ['jquery'], '1.1.0', true);
    wp_enqueue_script('meanmenu', get_template_directory_uri() . '/assets/js/meanmenu.js', ['jquery'], '2.0.8', true);
-   wp_enqueue_script('elevateZoom', get_template_directory_uri() . '/assets/js/elevateZoom-3.0.8.min.js', ['jquery'], '3.0.8', true);
+   wp_enqueue_script('zoomImage', get_template_directory_uri() . '/assets/js/zoom-image.js', ['jquery'], '1.0.0', true);
    wp_enqueue_script('monta-main', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], MONTA_VERSION, true);
 
    if (is_singular() && comments_open() && get_option('thread_comments')) {

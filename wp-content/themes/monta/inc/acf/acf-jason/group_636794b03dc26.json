@@ -1,0 +1,138 @@
+{
+    "key": "group_636794b03dc26",
+    "title": "Problem Meta",
+    "fields": [
+        {
+            "key": "field_6367959a45a7b",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Add\/type section title here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63679e90cd2b8",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "Add\/Type button text here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ver todos",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63679ebdcd2b9",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "url",
+            "instructions": "Add button link here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_636795c88a789",
+            "label": "Accordions",
+            "name": "accordions",
+            "type": "repeater",
+            "instructions": "Add accordion here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_636795e18a78a",
+                    "label": "Accordion Heading",
+                    "name": "accordion_heading",
+                    "type": "text",
+                    "instructions": "Add\/Type accordion heading here.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_636795ef8a78b",
+                    "label": "Accordion Body",
+                    "name": "accordion_body",
+                    "type": "textarea",
+                    "instructions": "Add\/Type accordion body here.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "template-problem.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1667735406
+}
