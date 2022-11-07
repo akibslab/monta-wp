@@ -645,16 +645,6 @@ section.section-padding {
 	background-position: center 637px;
 }
 
-/*.product-section .grid-item { 
-  width: 33.3333%;
-  margin-bottom: 40px;
-  padding: 0 20px;
-}
-
-.product-section .grid-item--width2 { 
-  width: 66.6666%; 
-}*/
-
 .products-box .product-item {
 	margin-bottom: 31px;
 }
@@ -662,6 +652,9 @@ section.section-padding {
 .products-box .product-item img {
 	margin-bottom: 15px;
 	height: 360px;
+}
+.related-products .products-box .product-item img {
+	height: auto;
 }
 
 .products-box .product-item h4.heading-4 {
