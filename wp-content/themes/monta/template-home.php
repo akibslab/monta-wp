@@ -344,11 +344,11 @@ $selectProducts = get_field('select_products');
                   $title = get_the_title($product->ID);
                   $largeImage = get_field('product_large_image', $product->ID);
                ?>
-                  <div class="item-<?php echo $n; ?> col-6 <?php if ($largeImage == 'yes') {
-                                                               echo 'col-md-8';
-                                                            } else {
-                                                               echo 'col-md-4';
-                                                            } ?>">
+                  <div class="item-<?php echo $n; ?>  <?php if ($largeImage == 'yes') {
+                                                         echo 'col-md-8';
+                                                      } else {
+                                                         echo 'col-md-4 col-6';
+                                                      } ?>">
                      <a href="<?php echo esc_url($permalink); ?>">
                         <div class="product-item">
                            <img src="<?php echo esc_url($productImage); ?>" alt="<?php esc_html_e($title, 'monta'); ?>">
