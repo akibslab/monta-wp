@@ -21,6 +21,7 @@ if (!defined('ABSPATH')) {
 $footerStyle = get_field('footer_style');
 $footerTop = get_field('footer_top', 'option');
 $footerBottom = get_field('footer_bottom', 'option');
+$socials = get_field('socials', 'option');
 ?>
 <footer>
    <?php if ($footerStyle == 'secondary') : ?>
