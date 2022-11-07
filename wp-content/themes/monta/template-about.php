@@ -27,7 +27,7 @@ $bottomSection = get_field('bottom_section');
 			<div class="col-lg-6 order-1 order-lg-0">
 				<div class="about-img">
 					<img src="<?php if (!empty($topSection['section_image'])) {
-										esc_url($topSection['section_image']);
+										echo esc_url($topSection['section_image']);
 									} else {
 										echo get_template_directory_uri() . '/assets/img/about/about.png';
 									} ?>" alt="" />
