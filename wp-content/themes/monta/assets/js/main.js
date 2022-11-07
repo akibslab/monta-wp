@@ -56,6 +56,26 @@
 		}
 	});
 
+	// Smooth Scroll for IE/ EDGE/ SAFARI
+	$("a").on("click", function (event) {
+		if (this.hash !== "") {
+			event.preventDefault();
+
+			var hash = this.hash;
+
+			$("html, body").animate(
+				{
+					scrollTop: $(hash).offset().top,
+				},
+				800,
+				function () {
+					window.location.hash = hash;
+				}
+			);
+		}
+	});
+	// End Smooth Scroll for IE/ EDGE/ SAFARI
+
 	$(".monta-product.show").zoomImage();
 	$(".show-small-img:first-of-type").css({
 		border: "solid 1px #951b25",
@@ -92,6 +112,7 @@
 			}
 		}
 	});
+
 	// 点击 '>' 下一张
 	$("#next-img").click(function () {
 		$("#show-img").attr(

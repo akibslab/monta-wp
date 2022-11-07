@@ -313,7 +313,7 @@ $images = get_field('galleries')
 $productSectionTitle = get_field('product_section_title');
 $selectProducts = get_field('select_products');
 ?>
-<section class="product-section">
+<section class="product-section" id="product-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
