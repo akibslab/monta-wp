@@ -57,23 +57,20 @@
 	});
 
 	// Smooth Scroll for IE/ EDGE/ SAFARI
-	$("a").on("click", function (event) {
-		if (this.hash !== "") {
-			event.preventDefault();
-
-			var hash = this.hash;
-
-			$("html, body").animate(
-				{
-					scrollTop: $(hash).offset().top,
-				},
-				800,
-				function () {
-					window.location.hash = hash;
-				}
-			);
-		}
+	$(window).on("load", function () {
+		var anchor = window.location.hash.replace("#", "");
+		scrollToAnchor(anchor);
 	});
+
+	function scrollToAnchor(selector) {
+		const destination = $("a[name='" + selector + "']");
+		$("html,body").animate(
+			{
+				scrollTop: destination.offset().top,
+			},
+			"slow"
+		);
+	}
 	// End Smooth Scroll for IE/ EDGE/ SAFARI
 
 	$(".monta-product.show").zoomImage();
