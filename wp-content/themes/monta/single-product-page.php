@@ -129,7 +129,7 @@ $productSocialShare = get_field('social_share');
 
 <!-- start: Related Product -->
 <?php if (!empty($selectRelatedProducts)) : ?>
-	<section class="related-products">
+	<section class="product-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
