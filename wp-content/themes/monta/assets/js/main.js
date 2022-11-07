@@ -3,7 +3,7 @@
 
 	$(document).ready(function () {
 		// Header Mobile Menu
-		$("header .header-menu").meanmenu({
+		$("header .main-menu").meanmenu({
 			meanMenuContainer: ".mobile-menu",
 			meanScreenWidth: "767",
 			meanExpand: ['<i class="fal fa-plus"></i>'],

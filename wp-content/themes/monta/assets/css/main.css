@@ -201,7 +201,9 @@ header {
 	background: #fafafa;
 	border-bottom: 1px solid #d9d9d9;
 }
-
+header.header-white {
+	background: #ffffff;
+}
 header .logo-box img {
 	width: 160px;
 }
@@ -252,7 +254,7 @@ header .mobile-toggle img {
 	margin-bottom: 80px;
 }
 
-.mean-container .mean-nav > ul {
+.mean-container .mean-nav {
 	padding: 0;
 	margin: 0;
 	width: 100%;
@@ -264,7 +266,7 @@ header .mobile-toggle img {
 	display: none !important;
 }
 
-.mean-container .mean-nav ul li a {
+.mean-container .mean-nav li a {
 	width: 100%;
 	padding: 15px 0;
 	color: #333333;
@@ -273,11 +275,11 @@ header .mobile-toggle img {
 	line-height: 1.5;
 	font-weight: 700;
 }
-.mean-container .mean-nav ul li a:hover {
+.mean-container .mean-nav li a:hover {
 	color: #c79153;
 }
 
-.mean-container .mean-nav ul li a.mean-expand {
+.mean-container .mean-nav li a.mean-expand {
 	margin-top: 5px;
 	padding: 0 !important;
 	line-height: 14px;
@@ -290,30 +292,30 @@ header .mobile-toggle img {
 	top: 0;
 	font-weight: 400;
 }
-.mean-container .mean-nav ul li a.mean-expand:hover {
+.mean-container .mean-nav li a.mean-expand:hover {
 	background: #c79153;
 	color: #fff;
 	border-color: #ebebeb;
 }
 
-.mean-container .mean-nav ul li > a > i {
+.mean-container .mean-nav li > a > i {
 	display: none;
 }
 
-.mean-container .mean-nav ul li > a.mean-expand i {
+.mean-container .mean-nav li > a.mean-expand i {
 	display: inline-block;
 }
 
-.mean-container .mean-nav > ul > li:first-child > a {
+.mean-container .mean-nav > li:first-child > a {
 	border-top: 0;
 }
 
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked {
+.mean-container .mean-nav li a.mean-expand.mean-clicked {
 	color: #fff;
 	background: #333;
 }
 
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked i {
+.mean-container .mean-nav li a.mean-expand.mean-clicked i {
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -322,13 +324,14 @@ header .mobile-toggle img {
 	color: #f5f4f4;
 }
 
-.mean-container .mean-nav ul li a {
+.mean-container .mean-nav li a {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 23px;
 	text-align: center;
 	text-transform: uppercase;
 	color: #ffffff;
+	display: block;
 }
 
 /* Sidemenu */
@@ -465,6 +468,9 @@ header .mobile-toggle img {
 }
 
 /* Intro Section */
+section.section-padding {
+	padding: 120px 0;
+}
 .intro-section {
 	padding: 120px 0 140px;
 	position: relative;
@@ -649,16 +655,16 @@ header .mobile-toggle img {
   width: 66.6666%; 
 }*/
 
-.product-section .product-item {
+.products-box .product-item {
 	margin-bottom: 31px;
 }
 
-.product-section .product-item img {
+.products-box .product-item img {
 	margin-bottom: 15px;
 	height: 360px;
 }
 
-.product-section .product-item h4.heading-4 {
+.products-box .product-item h4.heading-4 {
 	text-transform: capitalize;
 }
 

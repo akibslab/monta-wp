@@ -115,41 +115,6 @@ if (!function_exists('monta_supports')) :
       // Remove feed icon link from legacy RSS widget.
       add_filter('rss_widget_feed_link', '__return_false');
 
-      // Add support for custom header
-      add_theme_support("custom-header");
-
-      /**
-       * Set up the WordPress core custom background feature.
-       */
-      add_theme_support(
-         'custom-background',
-         apply_filters(
-            'demo_custom_background_args',
-            array(
-               'default-color' => 'ffffff',
-               'default-image' => '',
-            )
-         )
-      );
-
-
-      /**
-       * Add support for core custom logo.
-       */
-      $logo_width  = 300;
-      $logo_height = 100;
-
-      // add_theme_support(
-      //    'custom-logo',
-      //    [
-      //       'height'      => $logo_height,
-      //       'width'       => $logo_width,
-      //       'flex-height' => true,
-      //       'flex-width'  => true,
-      //    ]
-      // );
-
-
       /**
        * This theme uses wp_nav_menu() in one location.
        */
@@ -208,59 +173,10 @@ function monta_custom_post() {
          'show_ui'      => true,
          'show_in_rest' => true,
          'menu_icon'    => 'dashicons-cart',
+         'rewrite'           => array('slug' => 'product-page'),
       )
    );
 }
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-// function monta_widgets_init() {
-//    register_sidebar(
-//       array(
-//          'name'          => esc_html__('Main Sidebar', 'monta'),
-//          'id'            => 'main-sidebar',
-//          'description'   => esc_html__('Add widgets here.', 'monta'),
-//          'before_widget' => '<section id="%1$s" class="widget %2$s">',
-//          'after_widget'  => '</section>',
-//          'before_title'  => '<h2 class="widget-title">',
-//          'after_title'   => '</h2>',
-//       )
-//    );
-// }
-// add_action('widgets_init', 'monta_widgets_init');
-
-
-/**
- * Excerpt Length
- */
-// function monta_excerpt_length($length) {
-//    return 20;
-// }
-// add_filter('excerpt_length', 'monta_excerpt_length', 999);
-
-// post excerpt more
-// function monta_excerpt_more($more) {
-//    return '...';
-// }
-// add_filter('excerpt_more', 'monta_excerpt_more');
-
-
-
-/**
- * Better Comments
- */
-// include_once('inc/better-comments.php');
-
-/**
- * Codestar Framework
- */
-// if (!class_exists('CSF')) {
-//    include_once('inc/codestar-framework/codestar-framework.php');
-//    include_once('inc/metabox-and-options.php');
-// }
 
 /**
  * TGM Plugin Activator
@@ -277,81 +193,3 @@ if (class_exists('ACF')) {
    include_once('inc/acf/acf-option.php');
    include_once('inc/acf/acf-data.php');
 }
-
-// ACF Jason Save
-add_filter('acf/settings/save_json', 'monta_acf_json_save_point');
-function monta_acf_json_save_point($path) {
-
-   // update path
-   $path = get_stylesheet_directory() . '/inc/acf/acf-jason';
-
-
-   // return
-   return $path;
-}
-
-
-// ACF Jason Load
-add_filter('acf/settings/load_json', 'monta_acf_json_load_point');
-function monta_acf_json_load_point($paths) {
-
-   // remove original path (optional)
-   unset($paths[0]);
-
-
-   // append path
-   $paths[] = get_stylesheet_directory() . '/inc/acf/acf-jason';
-
-
-   // return
-   return $paths;
-}
-
-
-/**
- * One Click Demo Import
- */
-// if (!function_exists('monta_import_files')) {
-//    function monta_import_files() {
-//       return array(
-//          array(
-//             'import_file_name'             => esc_html__('Starter-Theme Demo Import', 'monta'),
-//             'local_import_file'            => trailingslashit(get_template_directory()) . '/inc/demo-data/content.xml',
-//             'local_import_widget_file'     => trailingslashit(get_template_directory()) . '/inc/demo-data/widgets.wie',
-//             'local_import_customizer_file' => trailingslashit(get_template_directory()) . '/inc/demo-data/customize.dat',
-//             'import_preview_image_url'     => get_template_directory_uri() . '/screenshot.png',
-//             'import_notice'                => esc_html__('After import demo, just set static homepage from settings > reading, Check widgets and menu. You will be done! :-)', 'monta'),
-//             // 'preview_url'                  => 'http://www.your_domain.com/my-demo-1',
-//          ),
-//       );
-//    }
-//    add_filter('ocdi/import_files', 'monta_import_files');
-// }
-
-
-
-/**
- * custom comments form order
- */
-// function monta_comment_field($fields) {
-//    $comment = $fields['comment'];
-//    $author  = $fields['author'];
-//    $email   = $fields['email'];
-//    $url     = $fields['url'];
-//    $cookies = $fields['cookies'];
-
-//    unset($fields['comment']);
-//    unset($fields['author']);
-//    unset($fields['email']);
-//    unset($fields['url']);
-//    unset($fields['cookies']);
-
-//    $fields['author']  = $author;
-//    $fields['email']   = $email;
-//    $fields['url']     = $url;
-//    $fields['comment'] = $comment;
-//    $fields['cookies'] = $cookies;
-
-//    return $fields;
-// }
-// add_action('comment_form_fields', 'monta_comment_field');

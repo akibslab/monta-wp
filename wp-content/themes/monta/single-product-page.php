@@ -1,12 +1,14 @@
 <?php
 
 /**
- * Template Name: Product Page
- * The template for displaying single product page.
+ * The template for displaying single product
  *
- * @package Bruno
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Monta
  */
-
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
@@ -149,11 +151,11 @@ $productSocialShare = get_field('social_share');
 						$title = get_the_title($product->ID);
 						$largeImage = get_field('product_large_image', $product->ID);
 					?>
-						<div class="item-<?php echo $n; ?> col-6 <?php if ($largeImage == 'yes') {
-																					echo 'col-md-6';
-																				} else {
-																					echo 'col-md-3';
-																				} ?>">
+						<div class="item-<?php echo $n; ?> <?php if ($largeImage == 'yes') {
+																			echo 'col-md-6';
+																		} else {
+																			echo 'col-md-3 col-6';
+																		} ?>">
 							<a href="<?php echo esc_url($permalink); ?>">
 								<div class="product-item">
 									<img src="<?php echo esc_url($productImage); ?>" alt="<?php esc_html_e($title, 'monta'); ?>">
