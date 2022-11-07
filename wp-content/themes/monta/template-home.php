@@ -17,7 +17,7 @@ get_header(); ?>
 <?php
 $slides = get_field('slides');
 ?>
-<section class="slider-section">
+<section class="slider-section" id="slider-section">
 
    <div id="sliderIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
@@ -145,7 +145,7 @@ $introColumnOne = get_field('intro_column_1');
 $introColumnTwo = get_field('intro_column_2');
 $introColumnThree = get_field('intro_column_3');
 ?>
-<section class="intro-section">
+<section class="intro-section" id="intro-section">
    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon.svg'); ?>" class="polygon d-none d-md-block" alt="">
    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse d-none d-md-block" alt="">
 
@@ -274,7 +274,7 @@ $introColumnThree = get_field('intro_column_3');
 <?php
 $images = get_field('galleries')
 ?>
-<section class="gallery-section">
+<section class="gallery-section" id="gallery-section">
    <div id="galleryControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
          <?php
@@ -376,7 +376,7 @@ $selectProducts = get_field('select_products');
 $problemSectionTitle = get_field('prblem_section_title');
 $problemContent = get_field('problem_section_content');
 ?>
-<section class="problems-section">
+<section class="problems-section" id="problems-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -429,7 +429,7 @@ $problemContent = get_field('problem_section_content');
 $contactSectionTitle = get_field('contact_section_title');
 $formShortCode = get_field('form_shortcode');
 ?>
-<section class="contact-section">
+<section class="contact-section" id="contact-section">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -467,7 +467,7 @@ $faqSectionTitle = get_field('faq_section_title');
 $faqAccordions = get_field('faq_accordions');
 $faqButton = get_field('faq_button');
 ?>
-<section class="faq-section">
+<section class="faq-section" id="faq-section">
    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/rectangle-1.svg'); ?>" class="rectangle-1 d-none d-md-block" alt="">
    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/ellipse.svg'); ?>" class="ellipse d-none d-md-block" alt="">
    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/polygon-2.svg'); ?>" class="polygon d-none d-md-block" alt="">
@@ -543,7 +543,7 @@ $faqButton = get_field('faq_button');
 <?php
 $instagramFeed = get_field('instagram_feed_shortcode');
 ?>
-<section class="instagram-section">
+<section class="instagram-section" id="instagram-section">
    <div class="container">
       <?php if (!empty($instagramFeed)) : ?>
          <div class="row">
