@@ -69,7 +69,7 @@
 		const destination = $("a[name='" + selector + "']");
 		$("html,body").animate(
 			{
-				scrollTop: destination.offset().top,
+				scrollTop: destination.offset(),
 			},
 			"slow"
 		);
