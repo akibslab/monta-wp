@@ -27,11 +27,6 @@ function monta_required_plugins() {
          'slug'      => 'contact-form-7',
          'required'  => true,
       ),
-      array(
-         'name'      => esc_html__('WPZOOM Instagram Widget & Block', 'monta'),
-         'slug'      => 'instagram-widget-by-wpzoom',
-         'required'  => true,
-      ),
 
 
       // // This is an example of how to include a plugin bundled with a theme.
