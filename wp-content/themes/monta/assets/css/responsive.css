@@ -577,22 +577,9 @@
 		margin-right: 20px;
 	}
 	/* product-details */
-	.product-details-tab {
-		flex-direction: column-reverse;
-		justify-content: center;
-	}
-
-	.product-details-tab .tab-content .tab-pane {
-		height: 315px;
-		width: 315px;
-	}
-
-	.product-details-tab .tab-content {
-		margin: 0 auto;
-	}
-	.product-details-tab .nav {
-		flex-direction: row;
-		margin: 0 auto;
+	.small-img {
+		width: 100%;
+		left: 0;
 	}
 	.product-contents .product-title {
 		margin-top: 30px;
@@ -600,9 +587,13 @@
 	.product-contents .product-title h3 {
 		font-size: 32px;
 	}
+	.product-contents .product-button {
+		margin-right: 0px;
+	}
 	.product-contents .product-button span {
 		display: block;
 		margin-top: 25px;
+		margin-left: 0px;
 	}
 
 	.product-contents .socials {
@@ -669,6 +660,12 @@
 	.monta-product.show {
 		width: 100%;
 		height: 100%;
+	}
+	.product-contents .product-button span > p {
+		display: block;
+	}
+	.product-contents .social-instagram > li {
+		margin-left: 0;
 	}
 }
 

@@ -16,6 +16,9 @@
 		$(".side-menu .cross-icon-box img").on("click", function () {
 			$(".side-menu").removeClass("active");
 		});
+		$(".mobile-menu li a").on("click", function () {
+			$(".side-menu").removeClass("active");
+		});
 
 		$(".magnificPopup").magnificPopup({
 			type: "image",

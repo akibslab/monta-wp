@@ -408,7 +408,7 @@ $problemContent = get_field('problem_section_content');
                         echo 'Nós sabemos disso e criamos uma seção com as soluções dos principais problemas que encontramos ao por a mão na massa.';
                      }; ?></p>
                   <?php if (!empty($problemContent['button_text'])) : ?>
-                     <a href="<?php echo esc_url($problemContent['button_text']); ?>" class="btn button-primary lg"><?php esc_html_e($problemContent['button_text'], 'monta'); ?></a>
+                     <a href="<?php echo esc_url($problemContent['button_link']); ?>" class="btn button-primary lg"><?php esc_html_e($problemContent['button_text'], 'monta'); ?></a>
                   <?php endif; ?>
                </div>
                <div class="image-box d-flex flex-wrap justify-content-center align-items-center">
@@ -530,7 +530,7 @@ $faqButton = get_field('faq_button');
       <div class="row">
          <div class="col-md-12 text-center">
             <?php if (!empty($faqButton['button_text'])) : ?>
-               <a href="<?php esc_url($faqButton['button_link']); ?>" class="btn button-primary"><?php esc_html_e($faqButton['button_text'], 'monta'); ?></a>
+               <a href="<?php echo esc_url($faqButton['button_link']); ?>" class="btn button-primary"><?php esc_html_e($faqButton['button_text'], 'monta'); ?></a>
             <?php endif; ?>
          </div>
       </div>
