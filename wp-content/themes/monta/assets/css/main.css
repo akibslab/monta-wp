@@ -1000,6 +1000,10 @@ img#big-img {
 	margin-left: 23px;
 	color: #353333;
 }
+.product-contents .product-button span > p {
+	display: inline-block;
+	margin-bottom: 0px;
+}
 .product-contents .socials {
 	display: flex;
 	flex-direction: row;
