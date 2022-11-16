@@ -98,7 +98,7 @@
                     "key": "field_6367a59427aa3",
                     "label": "Accordion Body",
                     "name": "accordion_body",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "Add\/Type accordion body here.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -108,10 +108,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -134,5 +134,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667736996
+    "modified": 1667917342
 }
