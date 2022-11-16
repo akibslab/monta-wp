@@ -84,53 +84,6 @@ $slides = get_field('slides');
          <?php endif;
          ?>
 
-
-         <!-- <div class="carousel-item">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="text-box">
-                        <h1 class="heading-1">Móveis <br> únicos</h1>
-                        <p> Simplificamos todos os passos da produção de um móvel para você realizar os modelos como se fosse mágica. Escolha os modelos e controle tudo partir de agora.</p>
-                        <a href="#" class="btn button-primary">Catálogo</a>
-                     </div>
-                  </div>
-                  <div class="col-md-7">
-                     <div class="image-box">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider/2.png" class="main" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-1.svg" class="rectangle-1" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-2.svg" class="rectangle-2" alt="">
-                     </div>
-                  </div>
-               </div>
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse" alt="">
-            </div>
-         </div>
-
-         <div class="carousel-item">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="text-box">
-                        <h1 class="heading-1">Móveis <br> únicos</h1>
-                        <p> Simplificamos todos os passos da produção de um móvel para você realizar os modelos como se fosse mágica. Escolha os modelos e controle tudo partir de agora.</p>
-                        <a href="#" class="btn button-primary">Catálogo</a>
-                     </div>
-                  </div>
-                  <div class="col-md-7">
-                     <div class="image-box">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider/3.png" class="main" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/polygon.svg" class="polygon" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-1.svg" class="rectangle-1" alt="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/rectangle-2.svg" class="rectangle-2" alt="">
-                     </div>
-                  </div>
-               </div>
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/ellipse.svg" class="ellipse" alt="">
-            </div>
-         </div> -->
-
       </div>
    </div>
 </section>
@@ -303,7 +256,7 @@ $images = get_field('galleries')
          <span class="visually-hidden"><?php esc_html_e('Next', 'monta'); ?></span>
       </button>
    </div>
-   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/zoom.png" class="zoom-icon d-md-none" alt="">
+   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/thumb_image.png" class="zoom-icon d-md-none" alt="">
 </section>
 <!-- Gallery Section End -->
 
