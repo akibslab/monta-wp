@@ -136,6 +136,7 @@ $introColumnThree = get_field('intro_column_3');
                   <div class="image-mobile">
                      <img src="<?php echo esc_url($introColumnOne['column_image']); ?>" class="d-md-none" alt="">
                      <h4 class="heading-4"><?php echo $introColumnOne['column_title']; ?></h4>
+                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/touch.png'); ?>" class="touch-icon d-md-none" alt="">
                   </div>
                   <div class="text-box">
                      <p><?php echo $introColumnOne['column_description']; ?></p>
@@ -155,6 +156,7 @@ $introColumnThree = get_field('intro_column_3');
                   <div class="image-mobile">
                      <img src="<?php echo esc_url($introColumnTwo['column_image']); ?>" class="d-md-none" alt="">
                      <h4 class="heading-4"><?php echo $introColumnTwo['column_title']; ?></h4>
+                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/touch.png'); ?>" class="touch-icon d-md-none" alt="">
                   </div>
                   <div class="text-box">
                      <p><?php echo $introColumnTwo['column_description']; ?></p>
@@ -186,6 +188,7 @@ $introColumnThree = get_field('intro_column_3');
                   <div class="image-mobile">
                      <img src="<?php echo esc_url($introColumnThree['column_image']); ?>" class="d-md-none" alt="">
                      <h4 class="heading-4"><?php echo $introColumnThree['column_title']; ?></h4>
+                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icons/touch.png'); ?>" class="touch-icon d-md-none" alt="">
                   </div>
                   <div class="text-box">
                      <p><?php echo $introColumnThree['column_description']; ?></p>

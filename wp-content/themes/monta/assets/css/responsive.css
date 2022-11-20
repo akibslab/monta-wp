@@ -333,6 +333,22 @@
 		margin-top: -90px;
 	}
 
+	.intro-section .intro-item .image-mobile {
+		position: relative;
+	}
+
+	.intro-section .intro-item .touch-icon {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 3em;
+		margin-top: -7%;
+	}
+
+	.intro-section .intro-item.item-2 .touch-icon, .intro-section .intro-item.item-3 .touch-icon {
+		margin-top: 0;
+	}
+
 	.intro-section .intro-item .text-box {
 		display: none;
 		max-width: 300px;
